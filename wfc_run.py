@@ -39,7 +39,7 @@ def run_default(run_experiment=False):
             backtracking = string2bool(xnode.get('backtracking', default_backtracking))
 
             run_instructions = [{"loc": "entropy", "choice": "weighted", "backtracking":backtracking, "global": None}]
-            run_instructions = [{"loc": "entropy", "choice": "weighted", "backtracking": True, "global": "allpatterns"}]
+            
             if run_experiment:
                 run_instructions = [{"loc": "lexical", "choice": "weighted", "backtracking":backtracking, "global": None},
                                     {"loc": "entropy", "choice": "weighted", "backtracking":backtracking, "global": None},
@@ -95,4 +95,4 @@ def run_default(run_experiment=False):
                     else:
                         print(solution)
                 
-run_default("heuristic")
+run_default()
